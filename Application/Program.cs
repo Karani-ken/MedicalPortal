@@ -2,6 +2,7 @@ using ApplicationsService.Data;
 using ApplicationsService.Extensions;
 using ApplicationsService.Services;
 using ApplicationsService.Services.IServices;
+using MessageBus;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("defaultConnection"));
 });
 builder.Services.AddScoped<IApplicationInterface, ApplicationService>();
+builder.Services.AddScoped<IRabbitMQPublisherInterface, RabbitMQPublisher>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddCors(options => options.AddPolicy("policy", build =>
 {

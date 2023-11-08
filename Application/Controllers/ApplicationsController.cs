@@ -2,6 +2,7 @@
 using ApplicationsService.Models.Dtos;
 using ApplicationsService.Services.IServices;
 using AutoMapper;
+using MessageBus;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,11 +15,15 @@ namespace ApplicationsService.Controllers
         private readonly IMapper _mapper;
         private readonly IApplicationInterface _applicationInterface;
         private readonly ResponseDto _response;
-        public ApplicationsController(IMapper mapper, IApplicationInterface applicationInterface)
+        private readonly IConfiguration _configuration;
+        private readonly IRabbitMQPublisherInterface _rabbitmq;
+        public ApplicationsController(IMapper mapper, IApplicationInterface applicationInterface,IRabbitMQPublisherInterface rabbitMQPublisher,IConfiguration configuration)
         {
             _mapper = mapper;
             _applicationInterface = applicationInterface;
             _response = new ResponseDto();
+            _configuration = configuration;
+            _rabbitmq = rabbitMQPublisher;
         }
         //create application
         [HttpPost]
@@ -33,7 +38,14 @@ namespace ApplicationsService.Controllers
                     _response.IsSuccess = false;
                     return BadRequest(_response);
                 }
-                _response.Message = res;
+            var queueName = _configuration.GetSection("QueuesandTopics:Applications").Get<string>();
+            var message = new UserMessage()
+            {
+                Email = applicationRequest.Email,
+                Name = applicationRequest.firstname,
+            };
+            _response.Message = res;
+            _rabbitmq.PublishMessage(message, queueName);
                 return Ok(_response);           
         }
         //get all applications
