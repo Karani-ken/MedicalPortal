@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationsService", "..\A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceBus", "ServiceBus", "{E1CFDE26-20A5-4F82-A750-23763ABEF53F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageBus", "MessageBus\MessageBus.csproj", "{610531BA-8F40-47DF-981E-CF9D4CDC3DEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBus", "MessageBus\MessageBus.csproj", "{610531BA-8F40-47DF-981E-CF9D4CDC3DEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "EmailService\EmailService.csproj", "{6A36942F-14CE-49C0-83C2-68E54351C64E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{610531BA-8F40-47DF-981E-CF9D4CDC3DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{610531BA-8F40-47DF-981E-CF9D4CDC3DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{610531BA-8F40-47DF-981E-CF9D4CDC3DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A36942F-14CE-49C0-83C2-68E54351C64E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A36942F-14CE-49C0-83C2-68E54351C64E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A36942F-14CE-49C0-83C2-68E54351C64E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A36942F-14CE-49C0-83C2-68E54351C64E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A81F0611-2E5E-4051-8679-41816CFBAD92} = {6174AC8D-5E5D-430A-8774-D151B8DF5DC8}
 		{610531BA-8F40-47DF-981E-CF9D4CDC3DEF} = {E1CFDE26-20A5-4F82-A750-23763ABEF53F}
+		{6A36942F-14CE-49C0-83C2-68E54351C64E} = {6174AC8D-5E5D-430A-8774-D151B8DF5DC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4995D83E-8DF0-407C-8AED-3FFFEE110736}
