@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBus", "MessageBus\Me
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediPortalEmailService", "EmailService\MediPortalEmailService.csproj", "{6A36942F-14CE-49C0-83C2-68E54351C64E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediPortalApplications", "MediPortalApplications\MediPortalApplications.csproj", "{D25364A4-606A-469D-8D84-7FFF219A7AA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediPortalApplications", "MediPortalApplications\MediPortalApplications.csproj", "{D25364A4-606A-469D-8D84-7FFF219A7AA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
