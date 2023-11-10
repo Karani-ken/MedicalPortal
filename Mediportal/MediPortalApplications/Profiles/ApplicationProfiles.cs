@@ -1,8 +1,8 @@
-﻿using ApplicationsService.Models;
-using ApplicationsService.Models.Dtos;
+﻿using MediPortalApplications.Models;
+using MediPortalApplications.Models.Dtos;
 using AutoMapper;
 
-namespace ApplicationsService.Profiles
+namespace MediPortalApplications.Profiles
 {
     public class ApplicationProfiles:Profile
     {

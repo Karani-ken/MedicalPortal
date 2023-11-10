@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ApplicationsService.Migrations
+namespace MediPortalApplications.Migrations
 {
     /// <inheritdoc />
     public partial class initial : Migration
@@ -19,6 +19,7 @@ namespace ApplicationsService.Migrations
                     firstname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     lastname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     surname = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     speciality = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LicenseUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HospitalName = table.Column<string>(type: "nvarchar(max)", nullable: false),

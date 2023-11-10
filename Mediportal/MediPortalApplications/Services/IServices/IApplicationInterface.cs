@@ -1,6 +1,6 @@
-﻿using ApplicationsService.Models;
+﻿using MediPortalApplications.Models;
 
-namespace ApplicationsService.Services.IServices
+namespace MediPortalApplications.Services.IServices
 {
     public interface IApplicationInterface
     {

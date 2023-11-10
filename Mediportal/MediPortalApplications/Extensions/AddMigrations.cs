@@ -1,7 +1,7 @@
-﻿using ApplicationsService.Data;
+﻿using MediPortalApplications.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApplicationsService.Extensions
+namespace MediPortalApplications.Extensions
 {
     public static class AddMigrations
     {

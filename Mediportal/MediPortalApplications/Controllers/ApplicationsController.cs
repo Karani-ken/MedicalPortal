@@ -1,12 +1,12 @@
-﻿using ApplicationsService.Models;
-using ApplicationsService.Models.Dtos;
-using ApplicationsService.Services.IServices;
+﻿using MediPortalApplications.Models;
+using MediPortalApplications.Models.Dtos;
+using MediPortalApplications.Services.IServices;
 using AutoMapper;
 using MessageBus;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApplicationsService.Controllers
+namespace MediPortalApplications.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

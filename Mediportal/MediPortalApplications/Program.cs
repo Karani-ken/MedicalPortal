@@ -1,7 +1,7 @@
-using ApplicationsService.Data;
-using ApplicationsService.Extensions;
-using ApplicationsService.Services;
-using ApplicationsService.Services.IServices;
+using MediPortalApplications.Data;
+using MediPortalApplications.Extensions;
+using MediPortalApplications.Services;
+using   MediPortalApplications.Services.IServices;
 using MessageBus;
 using Microsoft.EntityFrameworkCore;
 

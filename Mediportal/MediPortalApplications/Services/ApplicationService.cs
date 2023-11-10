@@ -1,9 +1,9 @@
-﻿using ApplicationsService.Data;
-using ApplicationsService.Models;
-using ApplicationsService.Services.IServices;
+﻿using MediPortalApplications.Data;
+using MediPortalApplications.Models;
+using MediPortalApplications.Services.IServices;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApplicationsService.Services
+namespace MediPortalApplications.Services
 {
     public class ApplicationService : IApplicationInterface
     {

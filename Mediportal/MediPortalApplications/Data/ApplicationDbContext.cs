@@ -1,7 +1,7 @@
-﻿using ApplicationsService.Models;
+﻿using MediPortalApplications.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApplicationsService.Data
+namespace MediPortalApplications.Data
 {
     public class ApplicationDbContext:DbContext
     {

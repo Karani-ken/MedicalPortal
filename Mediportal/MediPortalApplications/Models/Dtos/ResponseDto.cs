@@ -1,4 +1,4 @@
-﻿namespace ApplicationsService.Models.Dtos
+﻿namespace MediPortalApplications.Models.Dtos
 {
     public class ResponseDto
     {
