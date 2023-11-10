@@ -1,4 +1,4 @@
-﻿namespace EmailService.Models.Dto
+﻿namespace MediPortalEmailService.Models.Dto
 {
     public class EmailMessage
     {

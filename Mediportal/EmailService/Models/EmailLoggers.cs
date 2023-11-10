@@ -1,4 +1,4 @@
-﻿namespace EmailService.Models
+﻿namespace MediPortalEmailService.Models
 {
     public class EmailLoggers
     {

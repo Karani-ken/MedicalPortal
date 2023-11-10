@@ -1,4 +1,4 @@
-namespace EmailService
+namespace MediPortalEmailService
 {
     public class WeatherForecast
     {

@@ -1,7 +1,7 @@
-﻿using EmailService.Models;
+﻿using MediPortalEmailService.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EmailService.Data
+namespace MediPortalEmailService.Data
 {
     public class ApplicationDbContext:DbContext
     {

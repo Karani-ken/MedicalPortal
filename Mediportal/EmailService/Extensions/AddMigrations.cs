@@ -1,7 +1,8 @@
-﻿using EmailService.Data;
+﻿
+using MediPortalEmailService.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace EmailService.Extensions
+namespace MediPortalEmailService.Extensions
 {
     public static class AddMigrations
     {

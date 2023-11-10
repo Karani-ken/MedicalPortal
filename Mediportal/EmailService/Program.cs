@@ -1,5 +1,9 @@
-using EmailService.Data;
+using MediPortalEmailService.Data;
+using MediPortalEmailService.Extensions;
+using MediPortalEmailService.Messaging;
+using MediPortalEmailService.Services;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +17,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("defaultConnection"));
 });
-
+var dbContextBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
+dbContextBuilder.UseSqlServer(builder.Configuration.GetConnectionString("defaultConnection"));
+builder.Services.AddSingleton(new EmailService(dbContextBuilder.Options));
+builder.Services.AddHostedService<RabbitMQApplicationsConsumer>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,7 +31,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseMigration();
 app.UseAuthorization();
 
 app.MapControllers();
