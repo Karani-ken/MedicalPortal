@@ -1,10 +1,12 @@
-using MediPortalApplications.Data;
-using MediPortalApplications.Extensions;
-using MediPortalApplications.Services;
-using MediPortalApplications.Services.IServices;
+using MediPortalAuthentication.Data;
+using MediPortalAuthentication.Extensions;
+using MediPortalAuthentication.Model;
+using MediPortalAuthentication.Services;
+using MediPortalAuthentication.Services.IServices;
+using MediPortalAuthentication.Utility;
 using MessageBus;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,9 +19,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("defaultConnection"));
 });
-builder.Services.AddScoped<IApplicationInterface, ApplicationService>();
+builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IJwtService,JwtService>();
 builder.Services.AddScoped<IRabbitMQPublisherInterface, RabbitMQPublisher>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("JwtOptions"));
 builder.Services.AddCors(options => options.AddPolicy("policy", build =>
 {
     build.AllowAnyOrigin();
@@ -36,9 +42,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseMigration();
+app.UseCors("policy");
 app.UseAuthorization();
-
+app.UseMigration();
 app.MapControllers();
 
 app.Run();
