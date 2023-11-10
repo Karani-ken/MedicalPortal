@@ -76,5 +76,19 @@ namespace ApplicationsService.Controllers
             _response.obj = res;
             return Ok(_response);
         }
+        [HttpDelete]
+        public async Task<ActionResult<ResponseDto>> DeleteApplication(Guid id)
+        {
+            var res = await _applicationInterface.DeleteApplication(id);
+            if (string.IsNullOrWhiteSpace(res))
+            {
+                _response.Message = "could not fetch application";
+                _response.IsSuccess = false;
+                return BadRequest(_response);
+            }
+            _response.obj = res;
+            return Ok(_response);
+        }
+
     }
 }

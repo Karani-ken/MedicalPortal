@@ -12,6 +12,15 @@ namespace ApplicationsService.Services
         {
             _context = context;
         }
+
+        public async Task<string> DeleteApplication(Guid Id)
+        {
+           var ApplicationToDelete = await _context.Applications.FirstOrDefaultAsync(x => x.ApplicationId == Id);
+            _context.Applications.Remove(ApplicationToDelete);
+            await _context.SaveChangesAsync();
+            return "Deleted successfully";
+        }
+
         public async Task<Application> getApplication(Guid Id)
         {
             return await _context.Applications.FirstOrDefaultAsync(x => x.ApplicationId == Id);

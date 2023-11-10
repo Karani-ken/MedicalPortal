@@ -6,6 +6,7 @@ namespace ApplicationsService.Services.IServices
     {
         Task<string> makeApplication(Application application);
         Task<Application> getApplication(Guid Id);
+        Task<string> DeleteApplication(Guid Id);
 
         Task<List<Application>> getApplications();
     }
